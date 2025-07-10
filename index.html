@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nayan Karki's BECIE Notes Portal for Kathmandu Engineering College students - Semester-wise notes collection for all B.Tech courses">
+    <meta name="keywords" content="BECIE notes, KEC notes, Nayan Karki, Kathmandu Engineering College, engineering notes">
+    <meta name="author" content="Nayan Karki">
+    <title>Nayan Karki - BECIE Student | KEC Notes Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .semester-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .active-tab {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+        }
+        .note-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXX');
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="/storage/emulated/0/_loe Notes/Notes by Nayan website/pp.jpeg" alt="Nayan Karki - BECIE Student at KEC" class="h-8 w-8 rounded-full">
+                    <span class="text-xl font-bold text-gray-800">Nayan Karki</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium active-tab">Home</a>
+                    <a href="#notes" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+                    <a href="#upload" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Upload</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                        <span class="text-blue-600">BECIE Notes</span> by Nayan Karki
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Organized semester-wise notes collection for all years of B.Tech program at Kathmandu Engineering College.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#notes" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Browse Notes
+                        </a>
+                        <a href="#upload" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Upload Notes
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fb558551-6f17-4385-91a7-227d3ef2db15.png" alt="Illustration of students studying with books and laptops in an engineering college library setting" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Semesters Section -->
+    <section id="notes" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Semester-wise Notes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Select your semester to access all the available notes for each subject.
+                </p>
+            </div>
+            
+            <!-- Year Tabs -->
+            <div class="flex justify-center mb-8 overflow-x-auto">
+                <div class="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+                    <button class="year-tab px-4 py-2 rounded-md font-medium active-tab" data-year="1">First Year</button>
+                    <button class="year-tab px-4 py-2 rounded-md font-medium" data-year="2">Second Year</button>
+                    <button class="year-tab px-4 py-2 rounded-md font-medium" data-year="3">Third Year</button>
+                    <button class="year-tab px-4 py-2 rounded-md font-medium" data-year="4">Fourth Year</button>
+                </div>
+            </div>
+            
+            <!-- Year 1 Semesters (Default Visible) -->
+            <div id="year-1" class="year-content grid md:grid-cols-2 gap-6">
+                <div class="semester-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Semester I</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Basic Engineering and Mathematics subjects for first semester.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Engineering Mathematics I</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Engineering Drawing</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Computer Programming</li>
+                        <li class="flex items-center"><i class="fas fa-file-download text-blue-500 mr-2"></i> Physics</li>
+                    </ul>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        View All Notes <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="semester-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Semester II</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Advanced concepts in programming and mathematics.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-file-download text-blue-500 mr-2"></i> Engineering Mathematics II</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Applied Mechanics</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Basic Electrical Engineering</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Engineering Physics</li>
+                    </ul>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        View All Notes <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Other Years (Hidden by Default) -->
+            <div id="year-2" class="year-content grid md:grid-cols-2 gap-6 hidden">
+                <!-- Year 2 Semesters would go here -->
+            </div>
+            
+            <div id="year-3" class="year-content grid md:grid-cols-2 gap-6 hidden">
+                <!-- Year 3 Semesters would go here -->
+            </div>
+            
+            <div id="year-4" class="year-content grid md:grid-cols-2 gap-6 hidden">
+                <!-- Year 4 Semesters would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Upload Your Notes</h2>
+                    <p class="text-gray-600">
+                        Contribute to the community by sharing your well-organized notes with fellow students.
+                    </p>
+                </div>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label for="year" class="block text-sm font-medium text-gray-700 mb-1">Academic Year</label>
+                        <select id="year" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select Year</option>
+                            <option value="1">First Year</option>
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="semester" class="block text-sm font-medium text-gray-700 mb-1">Semester</label>
+                        <select id="semester" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select Semester</option>
+                            <option value="1">Semester I</option>
+                            <option value="2">Semester II</option>
+                            <option value="3">Semester III</option>
+                            <option value="4">Semester IV</option>
+                            <option value="5">Semester V</option>
+                            <option value="6">Semester VI</option>
+                            <option value="7">Semester VII</option>
+                            <option value="8">Semester VIII</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject Name</label>
+                        <input type="text" id="subject" placeholder="e.g. Data Structures and Algorithms" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label for="file" class="block text-sm font-medium text-gray-700 mb-1">Upload File</label>
+                        <div class="mt-1 flex items-center">
+                            <label for="file-upload" class="cursor-pointer bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <i class="fas fa-paperclip mr-2"></i> Choose File
+                            </label>
+                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                            <span class="ml-3 text-sm text-gray-600" id="file-name">No file chosen</span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-500">PDF, DOCX or PPT files (Max 10MB)</p>
+                    </div>
+                    
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                        <textarea id="description" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Brief description about these notes, including any special details..."></textarea>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md font-medium transition duration-300">
+                            Upload Notes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 md:pr-10">
+                    <img src="" alt="Nayan Karki - BECIE Student at KEC" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About NepEng Notes</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I'm Nayan Karki, a BECIE student at Kathmandu Engineering College. This platform shares my organized semester-wise notes with fellow students. All notes are personally created and verified to ensure high quality for academic success.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-blue-100 p-2 rounded-full">
+                                    <i class="fas fa-graduation-cap text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Comprehensive Collection</h3>
+                                <p class="text-gray-600">Notes for all semesters and all major subjects of B.Tech program.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-green-100 p-2 rounded-full">
+                                    <i class="fas fa-users text-green-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Community Driven</h3>
+                                <p class="text-gray-600">Upload and share your notes to help your fellow students.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-purple-100 p-2 rounded-full">
+                                    <i class="fas fa-search text-purple-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Easy to Find</h3>
+                                <p class="text-gray-600">Well-organized notes categorized by year, semester, and subject.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3` class="text-lg font-semibold mb-4 flex items-center">
+                        <img src="/storage/emulated/0/_loe Notes/Notes by Nayan website/Profile_.jpg" alt="Nayan Karki - BECIE Student" class="h-6 w-6 rounded-full mr-2">
+                        NepEng Notes
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        A platform for sharing engineering notes among Kathmandu Engineering College students.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#notes" class="text-gray-400 hover:text-white transition duration-300">Notes</a></li>
+                        <li><a href="#upload" class="text-gray-400 hover:text-white transition duration-300">Upload</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">nayan.bei79019@kecktm.edu<br>nayankarki052@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Kathmandu Engineering College</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/yourprofile" class="bg-gray-700 hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" class="bg-gray-700 hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/yourprofile" class="bg-gray-7pp hover:bg-gray-600 h-10 w-10 rounded-full flex items-cente>
+                                                </a>
+                        <a href="https://linkedin.com/in/yourprofile" class="bg-gray-700 hover:bg-gray-600 h-10 w-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 <a href="https://www.nayankarki.com.np" class="hover:text-white">www.nayankarki.com.np</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            const menu = document.createElement('div');
+            menu.className = 'md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50';
+            menu.innerHTML = `
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                    <a href="#notes" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Notes</a>
+                    <a href="#upload" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Upload</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                </div>
+            `;
+            
+            // Toggle mobile menu
+            const existingMenu = document.querySelector('.mobile-menu');
+            if (existingMenu) {
+                existingMenu.remove();
+            } else {
+                menu.classList.add('mobile-menu');
+                document.body.appendChild(menu);
+            }
+        });
+        
+        // Year tabs functionality
+        const yearTabs = document.querySelectorAll('.year-tab');
+        yearTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                yearTabs.forEach(t => t.classList.remove('active-tab'));
+                // Add active class to clicked tab
+                this.classList.add('active-tab');
+                
+                // Hide all year contents
+                document.querySelectorAll('.year-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected year content
+                const year = this.getAttribute('data-year');
+                document.getElementById(`year-${year}`).classList.remove('hidden');
+            });
+        });
+        
+        // File upload filename display
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('file-name').textContent = fileName;
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+    
